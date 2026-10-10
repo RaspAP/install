@@ -22,7 +22,7 @@ jobs:
           # sanity check: must be a non-empty shell script
           test -s raspbian.sh.new
           head -n1 raspbian.sh.new | grep -q '^#!'
-          mv raspbian.sh.new raspbian.sh
+          mv raspbian.sh.new index.html
 
       - name: Commit if changed
         run: |
@@ -33,5 +33,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
           git add raspbian.sh
-          git commit -m "Sync raspbian.sh from raspap-webgui@master"
+          git commit -m "Sync install loader from raspap-webgui"
           git push
